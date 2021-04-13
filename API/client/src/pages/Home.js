@@ -11,7 +11,7 @@ function Home() {
                     <hr className="my-4"></hr>
                     <p>This full-stack web application has been built in C# with ASP.NET Core, React JS, styled using Bootstrap 5 and deployed on Azure.
                     Come on in and search for tweets by keyword or username, or get random tweets that will entice the soul and excite the mind.
-                    A capstone project for the Software Developer Mastermind program, where students learn by building projects, it is meant to
+                    A capstone project for the Software Developer Mastermind program, where students learn by building projects, a program meant to
                     push students out of their comfort zone.
                 </p>
                 </div>
