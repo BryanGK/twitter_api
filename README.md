@@ -4,7 +4,7 @@
 
 ![dotnet](README_assets/NET_Core_Logo.png)
 ![csharp](README_assets/Csharp_Logo.png)
-![html](README_assets/React_logo.png)
+![html](README_assets/React_Logo.png)
 ![css](README_assets/Bootstrap_Logo.png)
 
 ### See it [here](https://happy-tweet.azurewebsites.net/)
