@@ -1,6 +1,6 @@
-# Twitter Showcase API
+# Happy-Tweet | Twitter Showcase App
 
-### A full stack Twitter Showcase App made with React JS, C# with ASP.Net Core, and stylined using Bootstrap
+### A full stack web application made with React JS, C# with ASP.Net Core, and styled using Bootstrap
 
 ![dotnet](README_assets/NET_Core_Logo.png)
 ![csharp](README_assets/Csharp_Logo.png)
