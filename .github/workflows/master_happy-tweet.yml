@@ -37,3 +37,8 @@ jobs:
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_67FD23E5813A42B0ABF5DF1BDB84A96C }}
         package: ${{env.DOTNET_ROOT}}/myapp
 
+    - name: npm install 
+      run: npm i --prefix API/client
+  
+    - name: npm build 
+      run: npm run build --prefix API/client
