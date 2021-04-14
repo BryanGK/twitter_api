@@ -24,7 +24,7 @@ software developer.
 
 Having completed this project from top to bottom I was able to further my knowledge of C#, .NET, React, and 
 Bootstrap. Beginning on day one of this app I was learning how to create my own custom API and how to connect the back-end 
-to the front-end client, it was complicated and I felt lost. I persevered and overcame the many challenges involved with this many moving parts. From the first time I received data from the Twitter API to when I deployed on Microsoft Azure I have been totally hooked on the challenges of software development, especially in the back-end. These are only the beginning steps in my career. I am excited for what projects or additional technologies I may work with in the future.
+to the front-end client, it was complicated and I felt lost. I persevered and overcame the many challenges involved with connecting a number of moving parts. From the first time I received data from the Twitter API to when I deployed on Microsoft Azure I have been totally hooked on the challenges of software development, especially in the back-end. These are only the beginning steps in my career. I am excited for what projects or additional technologies I may work with in the future.
 
 Specific things I used and learned while building this application:
 
