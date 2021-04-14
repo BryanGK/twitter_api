@@ -27,7 +27,7 @@ Bootstrap. From day one of this app I was learning how to create my own custom A
 to the front-end client. I persevered and overcame the many challenges involved with this many moving parts. From
 the first time I received data from the Twitter API to when I deployed on Microsoft Azure I have been totally
 hooked on the challenges of software development, especially in the back-end. These are only the beginning steps in
-my career. I am excited for what projects or additional technologies I may work in the future.
+my career. I am excited for what projects or additional technologies I may work with in the future.
 
 Specific things I used and learned while building this application:
 
