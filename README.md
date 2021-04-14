@@ -17,6 +17,32 @@
 
 ## Summary
 
+Before this project I had been building apps exclusively in the front-end, building a full-stack app was
+very intimidating. Through many long days of reasearch and asking questions from my mentor and support group,
+I was able to come up with an app that shows hard work and determination to become a professional software developer.
+
+Having completed this project from top to bottom I was able to further my knowledge of C#, .NET, React, and 
+Bootstrap. From day one of this app I was learning how to create my own custom API and how to connect the back-end 
+to the front-end client. I persevered and overcame the many challenges involved with this many moving parts. From
+the first time I received data from the Twitter API to when I deployed on Microsoft Azure I have been totally
+hooked on software development, especially in the back-end. This is only the beginning for me, I am excited to for 
+what projects or additional technologies I may work in the future.
+
+Specific things I used and learned while building this application:
+
+> Create ASP.Net Core Application
+
+> Create services, controllers, and models to handle recieving API calls and make calls from a back end
+
+> Dependency injection for C# classes
+
+> Parsing data recieved from Twitter to return only what was needed to my front end application
+
+> Building an API from scratch
+
+> Styling React with Bootstrap 4
+
+> Deployment to Microsoft Azure
 
 ## Installation
 
@@ -34,7 +60,7 @@ To run this application locally you need to add a file called `appsettings.Devel
   "Twitter_Key": {
     "BearerToken": "<Insert Twitter Bearer Token Here>"
 }
-}
+
 ```
 
 You can get a Twitter bearer token from `https://developer.twitter.com/`, signing up for a developer account and creating a twitter web application.
