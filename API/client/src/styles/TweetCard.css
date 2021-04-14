@@ -14,8 +14,25 @@
     align-items: baseline;
 }
 
-.card-title, .card-subtitle {
-    margin-left: 10px;
+@media (max-width: 400px) {
+    .card-name {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .card-subtitle {
+        margin-left: 58px;
+        position: relative;
+        bottom: 20px;
+    }
+    .card-title {
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 400px) {
+    .card-title, .card-subtitle {
+        margin-left: 10px;
+    }
 }
 
 .card-text {

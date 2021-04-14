@@ -25,7 +25,7 @@ Having completed this project from top to bottom I was able to further my knowle
 Bootstrap. From day one of this app I was learning how to create my own custom API and how to connect the back-end 
 to the front-end client. I persevered and overcame the many challenges involved with this many moving parts. From
 the first time I received data from the Twitter API to when I deployed on Microsoft Azure I have been totally
-hooked on software development, especially in the back-end. This is only the beginning for me, I am excited to for 
+hooked on software development, especially in the back-end. This is only the beginning for me, I am excited for 
 what projects or additional technologies I may work in the future.
 
 Specific things I used and learned while building this application:
@@ -40,7 +40,7 @@ Specific things I used and learned while building this application:
 
 > Building an API from scratch
 
-> Styling React with Bootstrap 4
+> Styling React with Bootstrap 5
 
 > Deployment to Microsoft Azure
 

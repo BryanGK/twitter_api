@@ -6,8 +6,15 @@
 
 .search-input {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 60px;
+}
+
+@media (max-width: 400px) {
+    .input-group {
+        padding: 0 !important;
+    }
 }
 
 .search-type-selector {
