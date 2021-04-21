@@ -5,7 +5,7 @@ import TwitterUserCard from '../components/TwitterUserCard';
 import '../styles/Random.css';
 
 function Random() {
-    const [twitterUsers] = useState(["nhl", "nasa", "ConanObrien", "TheOnion", "mental_floss"]);
+    const [twitterUsers] = useState(["nhl", "nasa", "bbc", "TheOnion", "mental_floss"]);
     const [twitterUserData, setTwitterUserData] = useState([]);
     const [randomTweet, setRandomTweet] = useState([]);
 
@@ -36,8 +36,7 @@ function Random() {
         setRandomTweet([]);
         axios.get(`/api/Tweets/random/${user}`)
             .then(res => {
-                const index = Math.floor(Math.random() * res.data.statuses.length);
-                setRandomTweet([res.data.statuses[index]]);
+                setRandomTweet([res.data]);
             })
             .catch(err => {
                 console.log(err);

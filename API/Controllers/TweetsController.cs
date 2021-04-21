@@ -9,12 +9,12 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class TweetsController : Controller
     {
-        public TweetsController(ITweetProcessor tweetProcessor)
-        {
-            _tweetProcessor = tweetProcessor;
-        }
+        private readonly ITwitterService _twitterService;
 
-        private readonly ITweetProcessor _tweetProcessor;
+        public TweetsController(ITwitterService twitterService)
+        {
+            _twitterService = twitterService;
+        }
 
         [Route("username/{user}")]
         [HttpGet]
@@ -22,7 +22,7 @@ namespace API.Controllers
         {
             try
             {
-                return Ok(await _tweetProcessor.GetTweetsByUser(user));
+                return Ok(await _twitterService.GetTweetsByUser(user));
             }
             catch (Exception e)
             {
@@ -36,7 +36,7 @@ namespace API.Controllers
         {
             try
             {
-                return Ok(await _tweetProcessor.GetTweetsByKeyword(keyword));
+                return Ok(await _twitterService.GetTweetsByKeyword(keyword));
             }
             catch (Exception e)
             {
@@ -50,7 +50,7 @@ namespace API.Controllers
         {
             try
             {
-                return Ok(await _tweetProcessor.GetUserData(user));
+                return Ok(await _twitterService.GetUserData(user));
             }
             catch (Exception e)
             {
@@ -64,7 +64,7 @@ namespace API.Controllers
         {
             try
             {
-            return Ok(await _tweetProcessor.GetRandomTweet(user));
+            return Ok(await _twitterService.GetRandomTweet(user));
             }
             catch (Exception e)
             {

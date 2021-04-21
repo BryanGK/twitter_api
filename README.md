@@ -55,8 +55,7 @@ To run this application locally you need to add a file called `appsettings.Devel
       "Microsoft.Hosting.Lifetime": "Information"
     }
   },
-  "Twitter_Key": {
-    "BearerToken": "<Insert Twitter Bearer Token Here>"
+  "BearerToken": "<Insert Twitter Bearer Token Here>"
 }
 
 ```

@@ -35,7 +35,7 @@ namespace API
             services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddScoped<IApiHelper, ApiHelper>();
-            services.AddScoped<ITweetProcessor, TweetProcessor>();
+            services.AddScoped<ITwitterService, TwitterService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

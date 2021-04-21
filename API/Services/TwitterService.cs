@@ -8,7 +8,7 @@ using System.Net;
 
 namespace API.Services
 {
-    public interface ITweetProcessor
+    public interface ITwitterService
     {
         Task<List<TweetModel>> GetTweetsByUser(string search);
 
@@ -16,14 +16,14 @@ namespace API.Services
 
         Task<UserModel> GetUserData(string search);
 
-        Task<TweetStatusesModel> GetRandomTweet(string user);
+        Task<TweetModel> GetRandomTweet(string user);
     }
 
-    public class TweetProcessor : ITweetProcessor
+    public class TwitterService : ITwitterService
     {
         private readonly HttpClient _client;
 
-        public TweetProcessor(IApiHelper apiHelper)
+        public TwitterService(IApiHelper apiHelper)
         {
             _client = apiHelper.InitializeClient();
         }
@@ -74,15 +74,21 @@ namespace API.Services
             throw new Exception("error in TweetProcessor");
         }
 
-        public async Task<TweetStatusesModel> GetRandomTweet(string user)
+        public async Task<TweetModel> GetRandomTweet(string user)
         {
             var response = await _client.GetAsync($"https://api.twitter.com/1.1/search/tweets.json?q=from:{user}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys");
 
             if (response.IsSuccessStatusCode)
             {
                 var twitterResponse = await response.Content.ReadAsStringAsync();
+                var tweets = JsonConvert.DeserializeObject<TweetStatusesModel>(twitterResponse);
 
-                return JsonConvert.DeserializeObject<TweetStatusesModel>(twitterResponse);
+                var random = new Random();
+                var tweetCount = tweets.statuses.Length;
+                var randomIndex = random.Next(0, tweetCount);
+
+                TweetModel randomTweet = tweets.statuses[randomIndex];
+                return randomTweet;
             }
 
             throw new Exception("error in TweetProcessor");
