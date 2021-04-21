@@ -5,7 +5,7 @@ import TwitterUserCard from '../components/TwitterUserCard';
 import '../styles/Random.css';
 
 function Random() {
-    const [twitterUsers] = useState(["nhl", "nasa", "bbc", "TheOnion", "mental_floss"]);
+    const [twitterUsers] = useState(["nhl", "nasa", "tferriss", "TheOnion", "mental_floss"]);
     const [twitterUserData, setTwitterUserData] = useState([]);
     const [randomTweet, setRandomTweet] = useState([]);
 
