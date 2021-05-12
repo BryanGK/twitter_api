@@ -16,9 +16,10 @@ function Random() {
 
     const getTwitterUserData = async () => {
         twitterUsers.forEach(item => {
-            axios.get(`api/Tweets/username/${item}`)
+            axios.get(`api/Tweets/user/${item}`)
                 .then(res => {
                     addUserData(res.data);
+                    console.log(res.data);
                 })
                 .catch(err => {
                     console.log(err);

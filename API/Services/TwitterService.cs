@@ -62,13 +62,17 @@ namespace API.Services
 
         public async Task<UserModel> GetUserData(string search)
         {
-            var response = await _client.GetAsync($"https://api.twitter.com/1.1/users/show.json?screen_name={search}");
+            //var response = await _client.GetAsync($"https://api.twitter.com/1.1/users/show.json?screen_name={search}");
+            var response = await _client.GetAsync($"https://api.twitter.com/2/users/by/username/{search}?expansions=pinned_tweet_id&user.fields=profile_image_url");
 
             if (response.IsSuccessStatusCode)
             {
                 var twitterResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"THIS IS TWITTER RESPONSE: {twitterResponse}");
 
-                return JsonConvert.DeserializeObject<UserModel>(twitterResponse);
+                var jsontesponse =  JsonConvert.DeserializeObject<UserModel>(twitterResponse);
+                Console.WriteLine($"\nTHIS IS JSON: {jsontesponse}");
+                return jsontesponse;
             }
 
             throw new Exception("error in TweetProcessor");
