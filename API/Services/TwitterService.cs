@@ -14,7 +14,7 @@ namespace API.Services
 
         Task<TweetStatusesModel> GetTweetsByKeyword(string keyword);
 
-        Task<UserModel> GetUserData(string search);
+        Task<DataModel> GetUserData(string search);
 
         Task<TweetModel> GetRandomTweet(string user);
     }
@@ -60,7 +60,7 @@ namespace API.Services
             throw new Exception("error in TweetProcessor");
         }
 
-        public async Task<UserModel> GetUserData(string search)
+        public async Task<DataModel> GetUserData(string search)
         {
             //var response = await _client.GetAsync($"https://api.twitter.com/1.1/users/show.json?screen_name={search}");
             var response = await _client.GetAsync($"https://api.twitter.com/2/users/by/username/{search}?expansions=pinned_tweet_id&user.fields=profile_image_url");
@@ -70,7 +70,7 @@ namespace API.Services
                 var twitterResponse = await response.Content.ReadAsStringAsync();
                 Console.WriteLine($"THIS IS TWITTER RESPONSE: {twitterResponse}");
 
-                var jsontesponse =  JsonConvert.DeserializeObject<UserModel>(twitterResponse);
+                var jsontesponse =  JsonConvert.DeserializeObject<DataModel>(twitterResponse);
                 Console.WriteLine($"\nTHIS IS JSON: {jsontesponse}");
                 return jsontesponse;
             }
