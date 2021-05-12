@@ -18,8 +18,7 @@ function Random() {
         twitterUsers.forEach(item => {
             axios.get(`api/Tweets/user/${item}`)
                 .then(res => {
-                    addUserData(res.data);
-                    console.log(res.data);
+                    addUserData(res.data.data);
                 })
                 .catch(err => {
                     console.log(err);
