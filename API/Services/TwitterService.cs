@@ -68,8 +68,9 @@ namespace API.Services
             {
                 var twitterResponse = await response.Content.ReadAsStringAsync();
 
-                var jsontesponse =  JsonConvert.DeserializeObject<DataModel>(twitterResponse);
-                return jsontesponse;
+                var jsonResponse =  JsonConvert.DeserializeObject<DataModel>(twitterResponse);
+
+                return jsonResponse;
             }
 
             throw new Exception("error in TweetProcessor");
@@ -82,13 +83,17 @@ namespace API.Services
             if (response.IsSuccessStatusCode)
             {
                 var twitterResponse = await response.Content.ReadAsStringAsync();
+
                 var tweets = JsonConvert.DeserializeObject<TweetStatusesModel>(twitterResponse);
 
                 var random = new Random();
+
                 var tweetCount = tweets.statuses.Length;
+
                 var randomIndex = random.Next(0, tweetCount);
 
                 TweetModel randomTweet = tweets.statuses[randomIndex];
+
                 return randomTweet;
             }
 

@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,7 +17,6 @@ namespace API
             _configuration = configuration;
         }
 
-
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -32,9 +25,9 @@ namespace API
           {
               config.RootPath = "client/build";
           });
-            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddScoped<IApiHelper, ApiHelper>();
+
             services.AddScoped<ITwitterService, TwitterService>();
         }
 
