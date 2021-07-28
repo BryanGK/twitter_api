@@ -44,13 +44,13 @@ namespace API.Controllers
             }
         }
 
-        [Route("user/{user}")]
+        [Route("random/{user}")]
         [HttpGet]
-        public async Task<IActionResult> GetUser(string user)
+        public async Task<IActionResult> GetRandomTweet(string user)
         {
             try
             {
-                return Ok(await _twitterService.GetUserData(user));
+                return Ok(await _twitterService.GetTweetByRandom(user));
             }
             catch (Exception e)
             {
@@ -58,13 +58,13 @@ namespace API.Controllers
             }
         }
 
-        [Route("random/{user}")]
+        [Route("user/{user}")]
         [HttpGet]
-        public async Task<IActionResult> GetRandom(string user)
+        public async Task<IActionResult> GetUser(string user)
         {
             try
             {
-            return Ok(await _twitterService.GetRandomTweet(user));
+                return Ok(await _twitterService.GetUserData(user));
             }
             catch (Exception e)
             {

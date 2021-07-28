@@ -14,9 +14,9 @@ namespace API.Services
 
         Task<TweetStatusesModel> GetTweetsByKeyword(string keyword);
 
-        Task<DataModel> GetUserData(string search);
+        Task<TweetModel> GetTweetByRandom(string user);
 
-        Task<TweetModel> GetRandomTweet(string user);
+        Task<DataModel> GetUserData(string search);
     }
 
     public class TwitterService : ITwitterService
@@ -60,23 +60,7 @@ namespace API.Services
             throw new Exception("error in TweetProcessor");
         }
 
-        public async Task<DataModel> GetUserData(string search)
-        {
-            var response = await _client.GetAsync($"https://api.twitter.com/2/users/by/username/{search}?expansions=pinned_tweet_id&user.fields=profile_image_url");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var twitterResponse = await response.Content.ReadAsStringAsync();
-
-                var jsonResponse =  JsonConvert.DeserializeObject<DataModel>(twitterResponse);
-
-                return jsonResponse;
-            }
-
-            throw new Exception("error in TweetProcessor");
-        }
-
-        public async Task<TweetModel> GetRandomTweet(string user)
+        public async Task<TweetModel> GetTweetByRandom(string user)
         {
             var response = await _client.GetAsync($"https://api.twitter.com/1.1/search/tweets.json?q=from:{user}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys");
 
@@ -99,5 +83,22 @@ namespace API.Services
 
             throw new Exception("error in TweetProcessor");
         }
+
+        public async Task<DataModel> GetUserData(string search)
+        {
+            var response = await _client.GetAsync($"https://api.twitter.com/2/users/by/username/{search}?expansions=pinned_tweet_id&user.fields=profile_image_url");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var twitterResponse = await response.Content.ReadAsStringAsync();
+
+                var jsonResponse = JsonConvert.DeserializeObject<DataModel>(twitterResponse);
+
+                return jsonResponse;
+            }
+
+            throw new Exception("error in TweetProcessor");
+        }
+
     }
 }
